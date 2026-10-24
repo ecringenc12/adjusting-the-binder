@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct ogrenci
+{
+	char ad[30];
+	char soyad[30];
+	int yas;
+	double not;
+};
+int main() {
+struct ogrenci bilgi;
+printf("Ogrencinin adi-> ");
+gets(bilgi.ad);
+printf("Ogrencinin soyadi-> ");
+gets(bilgi.soyad);
+printf("Ogrencinin yasi-> ");
+scanf("%d",&bilgi.yas);
+printf("Ogrencinin not ortalamasi-> ");
+scanf("%lf",&bilgi.not);
+FILE *dok;
+dok=fopen("yazdim.txt","w");
+fprintf(dok,"%s",bilgi.ad);
+fputc(' ',dok);
+fprintf(dok,"%s",bilgi.soyad);
+fputc('\n',dok);
+fprintf(dok,"%d",bilgi.yas);
+fputc('\n',dok);
+fprintf(dok,"%.2lf",bilgi.not);
+fclose(dok);
+
+	return 0;
+}
